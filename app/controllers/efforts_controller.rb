@@ -7,6 +7,13 @@ class EffortsController < ApplicationController
     end
   end
 
+  def index
+    @efforts = Effort.all
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def create
     @effort = @user.efforts.create(effort_params)
     respond_to do |format|
