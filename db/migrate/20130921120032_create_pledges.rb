@@ -11,7 +11,7 @@ class CreatePledges < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :efforts, :user_id 
-    add_index :efforts, :created_by 
+    add_index :pledges, :user_id 
+    add_index :pledges, :created_by 
   end
 end

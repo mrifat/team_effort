@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130921121605) do
 
-  create_table "efforts", force: true do |t|
+  create_table "pledges", force: true do |t|
     t.integer  "user_id",    null: false
     t.integer  "created_by", null: false
     t.string   "name",       null: false
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20130921121605) do
     t.datetime "updated_at"
   end
 
-  add_index "efforts", ["created_by"], name: "index_efforts_on_created_by", using: :btree
-  add_index "efforts", ["user_id"], name: "index_efforts_on_user_id", using: :btree
+  add_index "pledges", ["created_by"], name: "index_pledges_on_created_by", using: :btree
+  add_index "pledges", ["user_id"], name: "index_pledges_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name",                          null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20130921121605) do
   add_index "users", ["id"], name: "index_users_on_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "efforts", "users", name: "efforts_created_by_fk", column: "created_by", dependent: :delete
-  add_foreign_key "efforts", "users", name: "efforts_user_id_fk", dependent: :delete
+  add_foreign_key "pledges", "users", name: "pledges_created_by_fk", column: "created_by", dependent: :delete
+  add_foreign_key "pledges", "users", name: "pledges_user_id_fk", dependent: :delete
 
 end
