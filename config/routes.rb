@@ -1,7 +1,7 @@
 TeamEffort::Application.routes.draw do
-  root to: 'efforts#index'
+  root to: 'pledges#index'
   devise_for :users
   resources :users do
-      resources :efforts
+      resources :pledges
   end
 end

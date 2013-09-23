@@ -1,6 +1,6 @@
-class CreateEfforts < ActiveRecord::Migration
+class CreatePledges < ActiveRecord::Migration
   def change
-    create_table :efforts do |t|
+    create_table :pledges do |t|
       t.integer :user_id, null: false
       t.integer :created_by, null: false
       t.string :name, null: false
